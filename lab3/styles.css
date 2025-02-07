@@ -1,0 +1,44 @@
+body 		{
+					margin:0px;
+					padding:0px;
+			}
+
+.table2		{
+				border-spacing: 0px 20px;
+			}
+
+		
+.urban-evolution	{
+						background-color:DarkRed;
+						text-align:center;
+					}
+						
+.changing-face		{
+						background-color:DeepPink;
+						text-align:center;
+					}
+					
+.culture-society	{
+						background-color:Brown;
+						text-align:center;
+					}
+					
+.box_text_color 	{
+						color:White;
+						padding:10px;
+						margin:0px;
+
+					}
+					
+.td_image_width		{
+						width:570px;
+						height:400px;
+					}
+
+p 					{
+						font-family:"Arial";
+						font-size:16px;
+						color:#3d3d3d;
+					}
+						
+						
