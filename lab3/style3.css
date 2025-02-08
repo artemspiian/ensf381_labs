@@ -36,16 +36,11 @@
 	background-color: #bbb9b9;
 }
 
-#dropdown-spawner {
-	position: relative;
-	
-}
+
 
 #dropdown-content {
 	display:none;
 	position:absolute;
-	right: 40px;
-	top:  65px;
 	background-color:white;
 	color:black;
 	flex-direction:column;
