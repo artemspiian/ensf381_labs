@@ -18,3 +18,25 @@
     display: block;
     margin: 0 auto 10px;
 }
+
+.navbar	{
+	display: flex;
+	background-color: #333333;
+}
+
+.navbar>*	{
+	text-decoration: none;
+	color:white;
+	margin:20px;
+	padding:10px;
+	border-radius:5px;
+}
+
+.navbar>*:hover {
+	background-color: #bbb9b9;
+}
+
+
+#dropdown-spawner:hover ~ #dropdown {
+	color:red;
+}
