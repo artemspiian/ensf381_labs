@@ -36,7 +36,26 @@
 	background-color: #bbb9b9;
 }
 
+#dropdown-spawner {
+	position: relative;
+	
+}
 
-#dropdown-spawner:hover ~ #dropdown {
-	color:red;
+#dropdown-content {
+	display:none;
+	position:absolute;
+	right: 40px;
+	top:  65px;
+	background-color:white;
+	color:black;
+	flex-direction:column;
+}
+
+#dropdown-content > * {
+	border-top: 1px solid #bbb9b9;
+	padding: 10px 100px 10px 10px
+}
+
+#dropdown-spawner:hover > #dropdown-content {
+	display:flex;
 }
