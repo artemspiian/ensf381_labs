@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<title>Lab4 - Exercise 3</title>
+</head>
+<body>
+	<h1>JavaScript Lab</h1>
+	<script>
+		let classRoster = ["Alice", "Tom", "Charlie", "Diana", "Evan"];
+		console.log(classRoster.toString());
+		console.log(classRoster);
+		classRoster.push("Fiona", "Nancy");
+		classRoster.shift();
+		console.log(classRoster);
+		console.log(classRoster.length);
+		
+		let classInfo = {
+			className: "ENSF381: Full-Stack Web Development",
+			instructor: "Dr. Smith",
+			students: classRoster,
+			details: {semester:"Winter", year:"2025"},
+		};
+		
+		classInfo.schedule = ["Monday", "Wednesday", "Friday"];
+		classInfo.instructor = "Dr. Abdellatif";
+		console.log(classInfo.className);
+		console.log(classInfo.instructor);
+		console.log(classInfo.students);
+		console.log(classInfo.details.semester);
+		console.log(classInfo);
+		
+		let { semester, year } = classInfo.details;
+		console.log(semester);
+		console.log(year);
+		
+		let [student1, student2, ...remainingStudents] = classRoster;
+		console.log(student1);
+		console.log(student2);
+		console.log(remainingStudents);
+	</script>
+</body>
+
+
+</html>
