@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab4 – Exercise 1</title>
+  </head>
+  <body>
+    <h1>JavaScript Lab</h1>
+    <script>
+      // When I try to change the 'const', it gives a TypeError
+      string1 = "Hello, World!";
+      string2 = "JavaScript is awesome!";
+      console.log(string1.concat(string2))
+
+      let name = "Alice"
+      let age = 25
+      let special_string = `My name is ${name} and I am ${age} years old`
+      console.log(special_string)
+
+      date = new Date()
+      weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      console.log(date)
+      console.log(date.getFullYear())
+      console.log(date.getMonth())
+      console.log(date.getDay())
+      console.log(weekdays[date.getDay() - 1])
+    </script>
+  </body>
+</html>
