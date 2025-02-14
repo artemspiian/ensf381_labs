@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab4 – Exercise 1</title>
+  </head>
+  <body>
+    <h1>JavaScript Lab</h1>
+    <script>
+      //function add(num1, num2) {
+      //  return num1 + num2
+      //}
+      //function substract(num1, num2) {
+      //  return num1 - num2
+      //}
+
+      //function add(num1, num2 = 9) {
+      //  return num1 + num2
+      //}
+      //function substract(num1, num2 = 2) {
+      //  return num1 - num2
+      //}
+
+      add = (num1, num2 = 9) => {
+        return num1 + num2;
+      };
+
+      substract = (num1, num2 = 2) => {
+        return num1 - num2;
+      };
+
+      multiply = (num1, num2 = 1) => {
+        return num1 * num2;
+      };
+      divide = (num1, num2 = 1) => {
+        if (num2 == 0) {
+          return "Prevented";
+        }
+        return num1 / num2;
+      };
+      calculator = (num1, num2, callback=add) => {
+        return callback(num1, num2)
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab4 – Exercise 1</title>
+  </head>
+  <body>
+    <h1>JavaScript Lab</h1>
+    <script>
+      classRoster = ["Alice", "Tom", "Charlie", "Diana", "Evan"];
+      console.log(classRoster.toString());
+      console.log(classRoster);
+      classRoster.push("Fiona");
+      classRoster.push("Nancy");
+      console.log(classRoster);
+      classRoster.shift();
+      console.log(classRoster);
+      console.log(classRoster.length);
+
+      class classInfo {
+        constructor() {
+          this.className = "ENSF381: Full-Stack Web Development";
+          this.instructor = "Dr. Smith";
+          this.students = classRoster;
+          this.details = {
+            semester: "Winter",
+            year: 2025,
+          };
+          this.schedule = ["Monday", "Wednesday", "Friday"];
+        }
+      }
+      cla = new classInfo();
+      cla.instructor = "Dr. Deb";
+      console.log(cla.className, cla.instructor, cla.students);
+      console.log(cla.details.semester);
+      console.log(cla);
+      let { className: class_name, students: stud } = cla;
+      let { semester: sem, year: yea } = cla.details;
+      let [student1, student2, ...remainingStudents] = cla.students;
+      console.log(class_name, stud);
+      console.log(sem, yea);
+      console.log(student1, student2, remainingStudents);
+    </script>
+  </body>
+</html>
