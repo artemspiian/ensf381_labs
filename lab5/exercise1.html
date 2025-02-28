@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Lab5 - Exercise 1</title>
+</head>
+
+<body>
+	<input type="text" id="textInput" placeholder="Type something here..."/>
+	<label id="textLabel"></label>
+	<button id="redButton">Red</button>
+	<button id="blueButton">Blue</button>
+	<button id="greenButton">Green</button>
+	<button id="orangeButton">Orange</button>
+	<button id="purpleButton">Purple</button>
+</body>
+<script type="text/javascript">
+
+	const textInput = document.getElementById("textInput");
+	const textLabel = document.getElementById("textLabel");
+	
+	function setLabelText(text) {
+		textLabel.textContent = text;
+	}	
+	
+	setLabelText("hello");
+	
+	textInput.addEventListener("keydown", (key) => {
+		if (key.key == "Enter") {
+			setLabelText(textInput.value);
+			textInput.value = "";
+		}
+	});
+	
+	
+	
+	function setLabelColor(color) {
+		textLabel.style = `color:${color}`;
+	}
+	
+	let buttons = [
+		{id : "redButton", color : "Red"},
+		{id : "blueButton", color : "Blue"},
+		{id : "greenButton", color : "Green"},
+		{id : "orangeButton", color : "Orange"},
+		{id : "purpleButton", color : "Purple"},
+	]
+
+	for (button of buttons) {
+		let buttonElement = document.getElementById(button.id);
+		let color = button.color;
+		buttonElement.addEventListener("click", () => setLabelColor(color));
+	}
+	
+</script>
+
+</html>
