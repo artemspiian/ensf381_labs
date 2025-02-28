@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab5 - Exercise 1</title>
+  </head>
+  <body>
+    <input type="text" id="textInput" placeholder="Type something here..." />
+    <label id="textLabel"></label>
+    <button id="redButton">Red</button>
+    <button id="blueButton">Blue</button>
+    <button id="greenButton">Green</button>
+    <button id="orangeButton">Orange</button>
+    <button id="purpleButton">Purple</button>
+  </body>
+  <script type="text/javascript">
+    label = document.getElementById("textLabel");
+
+    const textInput = document.getElementById("textInput");
+    textInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        input = document.getElementById("textInput").value;
+        label.innerText = input;
+        textInput.value = "";
+      }
+    });
+
+    // Selecting an element
+    const buttonRed = document.getElementById("redButton");
+    const buttonBlue = document.getElementById("blueButton");
+    const buttonGreen = document.getElementById("greenButton");
+    const buttonOrange = document.getElementById("orangeButton");
+    const buttonPurple = document.getElementById("purpleButton");
+
+    // Adding a click event listener
+    buttonRed.addEventListener("click", () => {
+      label.style.color = "red";
+    });
+    buttonBlue.addEventListener("click", () => {
+      label.style.color = "blue";
+    });
+    buttonGreen.addEventListener("click", () => {
+      label.style.color = "green";
+    });
+    buttonOrange.addEventListener("click", () => {
+      label.style.color = "orange";
+    });
+    buttonPurple.addEventListener("click", () => {
+      label.style.color = "purple";
+    });
+  </script>
+</html>
