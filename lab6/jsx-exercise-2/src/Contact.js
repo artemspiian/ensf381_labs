@@ -3,6 +3,7 @@ function Contact(props) {
     <div>
         <h2>{props.title}</h2>
         <p>Contact Us</p>
+        <p>{props.description}</p>
     </div>
     );
 }
