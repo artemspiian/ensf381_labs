@@ -16,9 +16,9 @@ function App() {
       <p>React Componenets</p>
       <p>{currentYear}</p>
       <p>{isLoggedIn ? "Welcome back!" : "Please log in."}</p>
-      <Home />
-      <About />
-      <Contact />
+      <Home title="Home Page"/>
+      <About title="About Us"/>
+      <Contact title="Contact Us"/>
     </div>
   );
 }
