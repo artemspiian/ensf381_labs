@@ -1,6 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
-
 let currentYear = (new Date()).getFullYear()
 let isLoggedIn = true
 
