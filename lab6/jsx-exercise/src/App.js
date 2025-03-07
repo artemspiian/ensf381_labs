@@ -1,5 +1,13 @@
+import React from 'react';
+import Home from "./Home.js";
+import About from  "./About.js";
+import Contact from "./Contact.js";
+
 let currentYear = (new Date()).getFullYear()
 let isLoggedIn = true
+
+
+
 
 function App() {
   return (
@@ -8,6 +16,9 @@ function App() {
       <p>React Componenets</p>
       <p>{currentYear}</p>
       <p>{isLoggedIn ? "Welcome back!" : "Please log in."}</p>
+      <Home />
+      <About />
+      <Contact />
     </div>
   );
 }
