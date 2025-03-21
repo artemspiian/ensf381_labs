@@ -25,4 +25,7 @@ if __name__ == "__main__":
     print(f"There are {count_occurences(soup, 'a')} links")
     print(f"There are {count_occurences(soup, 'p')} paragraphs")
 
-    print("\n\n".join(str(tag) for tag in soup.find_all("a")))
+    # Part 4: Keywords analysis
+    keyword = input("Enter a keyword to count occurences of: ")
+    page_text = soup.get_text(separator=" ")
+    print(page_text.count(keyword))
