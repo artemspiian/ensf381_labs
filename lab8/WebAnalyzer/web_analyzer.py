@@ -17,6 +17,7 @@ def create_soup():
 
 if __name__ == "__main__":
     soup = create_soup()
+    print()
 
     # Part 3: Data Analysis
     def count_occurences(soup : BeautifulSoup, tag):
@@ -29,6 +30,7 @@ if __name__ == "__main__":
     print(f"There are {heading_count} headings")
     print(f"There are {link_count} links")
     print(f"There are {paragraph_count} paragraphs")
+    print()
 
     # Part 4 / 5: Keywords analysis and Word Frequency Analysis
     page_text = soup.get_text(separator=" ")
@@ -42,12 +44,14 @@ if __name__ == "__main__":
     keyword = input("Enter a keyword to count occurences of: ")
     occurences = frequencies.get(keyword.lower(), 0)
     print(f"{keyword} appears {occurences} times.")
+    print()
 
     # Part 5: Word Frequency Analysis
-    print("The top 5 frequencies are:")
+    print("The top 5 most common words are:")
     sorted_frequencies = sorted(frequencies.items(), key=lambda pair : pair[1])
     for pair in sorted_frequencies[-1 : -6 : -1]:
-        print(f"   {pair[0]} : {pair[1]}")
+        print(f"  '{pair[0]}' appearing {pair[1]} times")
+    print()
 
     # Part 6: Longest Paragraph
     def find_paragraph_length(paragraph):
@@ -55,6 +59,8 @@ if __name__ == "__main__":
 
     paragraphs = soup.find_all("p")
     paragraph = max(paragraphs, key=find_paragraph_length)
+    print("The longest paragraph is: ")
+    print()
     print(paragraph.get_text())
 
     # Part 7: Visualizing Results
