@@ -4,7 +4,9 @@ from bs4 import BeautifulSoup
 url = "https://en.wikipedia.org/wiki/University_of_Calgary"
 
 try:
-    respone = requests.get(url)
-
+    response = requests.get(url)
+    response.raise_for_status()
+    soup = BeautifulSoup(response.text, "html.parser")
+    print(f"Successfully fetched content from {url}")
 except Exception as e:
     print(f"Error fetching content: {e}")
