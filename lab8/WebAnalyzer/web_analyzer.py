@@ -33,21 +33,35 @@ if __name__ == "__main__":
 
     # Part 5: Word Frequency Analysis
     
-    words = re.findall("[a-zA-Z]+", page_text)
-    print(words)
-
+    words = re.findall(r"\w+", page_text)
     frequencies = dict()
     for word in words:
         word = word.lower()
         frequencies[word] = frequencies.get(word, 0) + 1
     sorted_frequencies = sorted(frequencies.items(), key=lambda pair : pair[1])
     
+    print(sorted_frequencies)
+
     def print_frequency_pair(pair):
         print(f"   {pair[0]} : {pair[1]}")
 
     print("The top 5 frequencies are:")
     for pair in sorted_frequencies[-1 : -6 : -1]:
         print_frequency_pair(pair)
+
+    # Part 6: Longest Paragraph
+
+    def find_paragraph_length(paragraph):
+        return len(re.findall(r"\w+", paragraph.get_text()))
+
+    paragraphs = soup.find_all("p")
+    paragraph = max(paragraphs, key=find_paragraph_length)
+    print(paragraph.get_text())
+
+
+
+
+
 
     
         
