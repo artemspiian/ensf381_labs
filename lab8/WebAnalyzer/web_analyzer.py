@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 url = "https://en.wikipedia.org/wiki/University_of_Calgary"
 
@@ -31,7 +32,10 @@ if __name__ == "__main__":
     print(page_text.count(keyword))
 
     # Part 5: Word Frequency Analysis
-    words = page_text.split()
+    
+    words = re.findall("[a-zA-Z]+", page_text)
+    print(words)
+
     frequencies = dict()
     for word in words:
         word = word.lower()
@@ -44,6 +48,7 @@ if __name__ == "__main__":
     print("The top 5 frequencies are:")
     for pair in sorted_frequencies[-1 : -6 : -1]:
         print_frequency_pair(pair)
+
     
         
     
