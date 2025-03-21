@@ -30,28 +30,24 @@ if __name__ == "__main__":
     print(f"There are {link_count} links")
     print(f"There are {paragraph_count} paragraphs")
 
-    # Part 4: Keywords analysis
-    keyword = input("Enter a keyword to count occurences of: ")
+    # Part 4 / 5: Keywords analysis and Word Frequency Analysis
     page_text = soup.get_text(separator=" ")
-    print(page_text.count(keyword))
-
-    # Part 5: Word Frequency Analysis
-    
     words = re.findall(r"\w+", page_text)
     frequencies = dict()
     for word in words:
         word = word.lower()
         frequencies[word] = frequencies.get(word, 0) + 1
-    sorted_frequencies = sorted(frequencies.items(), key=lambda pair : pair[1])
-    
-    print(sorted_frequencies)
 
-    def print_frequency_pair(pair):
-        print(f"   {pair[0]} : {pair[1]}")
+    # Part 4: Keyword analysis:
+    keyword = input("Enter a keyword to count occurences of: ")
+    occurences = frequencies.get(keyword.lower(), 0)
+    print(f"{keyword} appears {occurences} times.")
 
+    # Part 5: Word Frequency Analysis
     print("The top 5 frequencies are:")
+    sorted_frequencies = sorted(frequencies.items(), key=lambda pair : pair[1])
     for pair in sorted_frequencies[-1 : -6 : -1]:
-        print_frequency_pair(pair)
+        print(f"   {pair[0]} : {pair[1]}")
 
     # Part 6: Longest Paragraph
 
