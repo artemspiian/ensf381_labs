@@ -65,6 +65,6 @@ if __name__ == "__main__":
     values = [heading_count, link_count, paragraph_count]
 
     plt.bar(labels, values)
-    plt.title("Group xx")
+    plt.title("Group 39")
     plt.ylabel("Count")
     plt.show()
