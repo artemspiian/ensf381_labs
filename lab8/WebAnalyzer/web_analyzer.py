@@ -29,3 +29,21 @@ if __name__ == "__main__":
     keyword = input("Enter a keyword to count occurences of: ")
     page_text = soup.get_text(separator=" ")
     print(page_text.count(keyword))
+
+    # Part 5: Word Frequency Analysis
+    words = page_text.split()
+    frequencies = dict()
+    for word in words:
+        word = word.lower()
+        frequencies[word] = frequencies.get(word, 0) + 1
+    sorted_frequencies = sorted(frequencies.items(), key=lambda pair : pair[1])
+    
+    def print_frequency_pair(pair):
+        print(f"   {pair[0]} : {pair[1]}")
+
+    print("The top 5 frequencies are:")
+    for pair in sorted_frequencies[-1 : -6 : -1]:
+        print_frequency_pair(pair)
+    
+        
+    
