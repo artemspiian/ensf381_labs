@@ -3,9 +3,10 @@ from bs4 import BeautifulSoup
 import re
 import matplotlib.pyplot as plt
 
-url = "https://en.wikipedia.org/wiki/University_of_Calgary"
+if __name__ == "__main__":
+    url = "https://en.wikipedia.org/wiki/University_of_Calgary"
 
-def create_soup():
+    # Part 2: Crawl the wikipedia page
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -13,10 +14,6 @@ def create_soup():
         print(f"Successfully fetched content from {url}")
     except Exception as e:
         print(f"Error fetching content: {e}")
-    return soup
-
-if __name__ == "__main__":
-    soup = create_soup()
     print()
 
     # Part 3: Data Analysis
