@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import matplotlib.pyplot as plt
 
 url = "https://en.wikipedia.org/wiki/University_of_Calgary"
 
@@ -22,9 +23,12 @@ if __name__ == "__main__":
 
     # Part 3: Data Analysis
     heading_tags = ("h1", "h2", "h3", "h4", "h5", "h6")
-    print(f"There are {sum(count_occurences(soup, tag) for tag in heading_tags)} headings")
-    print(f"There are {count_occurences(soup, 'a')} links")
-    print(f"There are {count_occurences(soup, 'p')} paragraphs")
+    heading_count = sum(count_occurences(soup, tag) for tag in heading_tags)
+    link_count = count_occurences(soup, 'a')
+    paragraph_count = count_occurences(soup, 'p')
+    print(f"There are {heading_count} headings")
+    print(f"There are {link_count} links")
+    print(f"There are {paragraph_count} paragraphs")
 
     # Part 4: Keywords analysis
     keyword = input("Enter a keyword to count occurences of: ")
@@ -58,7 +62,14 @@ if __name__ == "__main__":
     paragraph = max(paragraphs, key=find_paragraph_length)
     print(paragraph.get_text())
 
+    # Part 7: Visualizing Results
+    labels = ["headings", "links", "paragraphs"]
+    values = [heading_count, link_count, paragraph_count]
 
+    plt.bar(labels, values)
+    plt.title("Group xx")
+    plt.ylabel("Count")
+    plt.show()
 
 
 
