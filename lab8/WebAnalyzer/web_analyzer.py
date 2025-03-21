@@ -15,13 +15,13 @@ def create_soup():
         print(f"Error fetching content: {e}")
     return soup
 
-def count_occurences(soup : BeautifulSoup, tag):
-    return len(soup.find_all(tag))
-
 if __name__ == "__main__":
     soup = create_soup()
 
     # Part 3: Data Analysis
+    def count_occurences(soup : BeautifulSoup, tag):
+        return len(soup.find_all(tag))
+
     heading_tags = ("h1", "h2", "h3", "h4", "h5", "h6")
     heading_count = sum(count_occurences(soup, tag) for tag in heading_tags)
     link_count = count_occurences(soup, 'a')
@@ -50,7 +50,6 @@ if __name__ == "__main__":
         print(f"   {pair[0]} : {pair[1]}")
 
     # Part 6: Longest Paragraph
-
     def find_paragraph_length(paragraph):
         return len(re.findall(r"\w+", paragraph.get_text()))
 
@@ -66,10 +65,3 @@ if __name__ == "__main__":
     plt.title("Group xx")
     plt.ylabel("Count")
     plt.show()
-
-
-
-
-    
-        
-    
