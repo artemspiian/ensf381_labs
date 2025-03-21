@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     paragraphs = soup.find_all("p")
     paragraph = max(paragraphs, key=find_paragraph_length)
-    print("The longest paragraph is: ")
+    print(f"The longest paragraph, containging {find_paragraph_length(paragraph)} words, is: ")
     print()
     print(paragraph.get_text())
 
