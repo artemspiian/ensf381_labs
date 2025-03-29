@@ -1,0 +1,44 @@
+#house-form-container {
+    width: 600px;
+    padding: 24px;
+    margin: auto;
+    margin-top: 40px;
+    border: 1px solid LightGray;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px LightGray;
+}
+
+#house-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+#house-form-container form label {
+    margin-top: 12px;
+}
+
+#house-form-container form input {
+    border: 1px solid LightGray;
+    border-radius: 4px;
+}
+
+#house-form-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+}
+
+#house-form-container button:hover {
+    background-color: Blue;
+    cursor:pointer;
+}
+
+#predicted-price {
+    margin-top: 16px;
+    background-color: #dff0d8;
+    border: 1px solid #3c763d;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
