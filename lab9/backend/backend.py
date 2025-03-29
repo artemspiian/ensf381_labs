@@ -37,9 +37,8 @@ model = joblib.load("./src/random_forest_model.pkl")
 def predictHousePrice():
     data = request.get_json()
 
-
-    cats = "pets" in data and data["pets"]
-    dogs = "pets" in data and data["pets"]
+    cats = True if "pets" in data and data["pets"] else False
+    dogs = True if "pets" in data and data["pets"] else False
 
     sample_data = [
         data["city"],
